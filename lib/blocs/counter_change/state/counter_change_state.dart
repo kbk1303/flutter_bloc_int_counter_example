@@ -7,16 +7,16 @@ class CounterChangeState {
     return CounterChangeState().._currentNumber = 0;
   }
 
-  CounterChangeState increment(int current) {
+  CounterChangeState increment(CounterChangeState currentState) {
     return CounterChangeState()
-      .._currentNumber = current
+      .._currentNumber = currentState.currentValue
       .._currentNumber += 1;
   }
 
-  CounterChangeState decrement(int current) {
+  CounterChangeState decrement(CounterChangeState currentState) {
     return CounterChangeState()
-     .._currentNumber = current
-     .._currentNumber =_currentNumber == 0 ? 0 : _currentNumber -= 1;
+      .._currentNumber = currentState.currentValue
+      .._currentNumber = _currentNumber == 0 ? 0 : _currentNumber -= 1;
     /*
     _currentNumber = current;
    

@@ -4,7 +4,7 @@ import 'package:flutter_bloc_int_counter_example/blocs/counter_change/state/coun
 
 class CounterChangeBloc extends Bloc<CounterChangeEvent, CounterChangeState> {
   CounterChangeBloc() : super(CounterChangeState()..init()) {
-    on<CounterIncrementEvent>((event, emit) => emit(state.increment(state.currentValue)));
-    on<CounterDecrementEvent>((event, emit) => emit(state.decrement(state.currentValue)));
+    on<CounterIncrementEvent>((event, emit) => emit(state.increment(state)));
+    on<CounterDecrementEvent>((event, emit) => emit(state.decrement(state)));
   }
 }
